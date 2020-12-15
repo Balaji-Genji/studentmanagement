@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD STUDENT ATTENDANCE</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+<form method="POST" action="studentattendance">
+    {% csrf_token %}
+
+    {% for attendance in attendances %}
+     <input type="date" name="date" id="id_date" required>
+    <input type="text" name="am_or_pm" id="id_am_or_pm">
+    <input type="text" name="present_or_absent" id="id_present_or_absent">
+    <input type="text" name="student_id" value="{{attendance.id}}" >
+    <br>
+    {% endfor %}
+    <input type="submit" value="Submit" name="submit">
+</form>
+</body>
+</html>
+

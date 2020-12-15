@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Class</title>
+</head>
+<body>
+<form method="POST" action="addattendance">
+    {% csrf_token %}
+    <select name="classname">
+        <option value="selected" selected>-------select-------</option>
+        {% for classes in classnames%}
+     <option value="{{classes.class_name}}">{{classes.class_name}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Submit">
+
+</form>
+</body>
+</html>

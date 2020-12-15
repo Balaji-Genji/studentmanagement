@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD STUDENT</title>
+</head>
+<body>
+<center>
+    <h2>Add Student</h2>
+<form method="POST" action="student" enctype="multipart/form-data">
+    {% csrf_token %}
+     <div class="form-group">
+       Name: {{students.name}}
+    </div>
+    <div class="form-group">
+     Class Name: <select name="class_name">
+           <option value="" disabled="true" selected>----select----</option>
+           {% for student1 in students1 %}
+           <option value="{{student1.class_name}}">{{student1.class_name}}</option>
+           {% endfor %}
+       </select>
+    </div>
+    <div class="form-group">
+       Address: {{students.address}}
+    </div>
+
+    <div class="form-group">
+       Mobile No: {{students.mobile}}
+    </div>
+    <div class="form-group">
+       Image: {{students.image}}
+    </div>
+
+    <input type="submit" name="submit" value="Submit">
+
+</form>
+    </center>
+</body>
+</html>

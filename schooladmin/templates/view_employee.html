@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIEW EMPLOYEES</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+</head>
+<body>
+<table id="example" class="table table-striped table-bordered" style="width:100%">
+  <thead>
+    <tr>
+      <th scope="col">Employee Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Designations</th>
+      <th scope="col">Address</th>
+        <th scope="col">Mobile</th>
+      <th scope="col">Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for employee in employees %}
+    <tr>
+      <td>{{employee.id}}</td>
+      <td>{{employee.employee_name}}</td>
+      <td>{{employee.designation}}</td>
+      <td>{{employee.address}}</td>
+        <td>{{employee.mobile}}</td>
+      <td><img src="{{employee.employee_image.url}}" height="50px" width="50px"></td>
+       <td>  <a href="/delete_employee/{{employee.id}}" class="btn btn-danger"><span> Delete</span></a> <a href="/edit_employee/{{classname.id}}" class="btn btn-danger"><span> Edit</span></a></td>
+
+    </tr>
+  {% endfor %}
+   <tfoot>
+  <tr>
+    <th scope="col">Employee Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Designations</th>
+      <th scope="col">Address</th>
+        <th scope="col">Mobile</th>
+      <th scope="col">Image</th>
+      <th>Actions</th>
+            </tr>
+        </tfoot>
+      </tbody>
+</table>
+</body>
+</html>

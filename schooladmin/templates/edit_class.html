@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Class</title>
+</head>
+<body>
+<form method="POST" action="/update_class/{{class.id}}" enctype="multipart/form-data">
+         {% csrf_token %}
+        <div class="form-group">
+            <label class="control-label">Class Name: </label>
+           <input type="text" name="class_name" value="{{class.class_name}}">
+         </div>
+
+
+        <div class="form-group">
+            <input type="submit" class="form-control btn btn-success" name="submit" value="Add Class">
+        </div>
+
+
+     </form>
+</body>
+</html>

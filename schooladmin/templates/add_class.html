@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Class</title>
+</head>
+<body>
+<form method="post" action="">
+    {% csrf_token %}
+{{classes}}
+    <input type="submit" value="Add" name="submit">
+</form>
+</body>
+</html>
